@@ -13,12 +13,32 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/styles.css">
-<script>document.documentElement.classList.add("js");</script>
+<script>document.documentElement.classList.add("js");window.setTimeout(function(){document.documentElement.classList.add("is-ready");},1500);</script>
 </head>
-<body>
+<body data-page="about">
 
 <a class="skip" href="#main">Skip to content</a>
+
+<canvas class="webgl" id="webgl" aria-hidden="true"></canvas>
+<div class="page-bg" aria-hidden="true">
+  <div class="bg-grid" data-speed="0.12"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <span class="preloader-brand">Exea Labs</span>
+  <div class="preloader-meta">
+    <span class="preloader-count" data-preloader-count>00</span>
+    <div class="preloader-bar" data-preloader-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="preloader-bar-fill" data-preloader-fill></span>
+    </div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" hidden aria-hidden="true">
+  <span class="cursor-dot"></span>
+  <span class="cursor-ring"></span>
+</div>
 
 <header class="site-header">
   <div class="wrap">
@@ -45,7 +65,7 @@
   <section class="page-head">
     <div class="wrap">
       <img class="org-mark" src="/assets/img/exea-mark.png" alt="" width="256" height="256" data-anim="hero">
-      <h1 data-anim="hero">Exea Labs</h1>
+      <h1 data-anim="hero" data-split>Exea Labs</h1>
       <p data-anim="hero">
         A student-run research collective for high school students. Members get
         compute, mentorship, and a research community at no cost. Founded April 2026,
@@ -70,9 +90,9 @@
     </div>
   </section>
 
-  <section class="section section--mist" aria-labelledby="get-h">
+  <section class="section section--glass" aria-labelledby="get-h">
     <div class="wrap">
-      <h2 id="get-h" data-anim="up">What members get</h2>
+      <h2 id="get-h" data-anim="up" data-split>What members get</h2>
       <p class="intro" data-anim="up">All of it free. No paid tiers, no application fee.</p>
       <ul class="list" data-anim="up">
         <li><b>Compute</b><span>AMD accelerators, including a node of eight MI300X GPUs.</span></li>
@@ -85,7 +105,7 @@
 
   <section class="section" aria-labelledby="org-h">
     <div class="wrap">
-      <h2 id="org-h" data-anim="up">Who runs it</h2>
+      <h2 id="org-h" data-anim="up" data-split>Who runs it</h2>
       <p class="intro" data-anim="up">
         Exea Labs is an international lab.
       </p>
@@ -133,12 +153,10 @@
       <a href="https://discord.gg/qTBJKCNx2" target="_blank" rel="noopener">Exea Labs Discord</a>
       <a href="https://www.exealabs.org/" target="_blank" rel="noopener">exealabs.org</a>
     </nav>
-    <p class="footer-note">Exea Labs &middot; Future Leaders Initiative, a 501(c)(3) nonprofit</p>
+    <p class="footer-note">Exea Labs · Future Leaders Initiative, a 501(c)(3) nonprofit</p>
   </div>
 </footer>
 
-<script src="/assets/vendor/gsap.min.js" defer></script>
-<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="/assets/app.js" defer></script>
+<script type="module" src="/src/js/main.js"></script>
 </body>
 </html>

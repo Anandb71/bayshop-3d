@@ -13,12 +13,32 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="stylesheet" href="/assets/styles.css">
-<script>document.documentElement.classList.add("js");</script>
+<script>document.documentElement.classList.add("js");window.setTimeout(function(){document.documentElement.classList.add("is-ready");},1500);</script>
 </head>
-<body>
+<body data-page="signup">
 
 <a class="skip" href="#main">Skip to content</a>
+
+<canvas class="webgl" id="webgl" aria-hidden="true"></canvas>
+<div class="page-bg" aria-hidden="true">
+  <div class="bg-grid" data-speed="0.12"></div>
+  <div class="bg-vignette"></div>
+</div>
+
+<div class="preloader" id="preloader" aria-hidden="true">
+  <span class="preloader-brand">Exea Labs</span>
+  <div class="preloader-meta">
+    <span class="preloader-count" data-preloader-count>00</span>
+    <div class="preloader-bar" data-preloader-bar role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="preloader-bar-fill" data-preloader-fill></span>
+    </div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" hidden aria-hidden="true">
+  <span class="cursor-dot"></span>
+  <span class="cursor-ring"></span>
+</div>
 
 <header class="site-header">
   <div class="wrap">
@@ -44,7 +64,7 @@
 
   <section class="page-head">
     <div class="wrap">
-      <h1 data-anim="hero">Sign Up</h1>
+      <h1 data-anim="hero" data-split>Sign Up</h1>
       <p data-anim="hero">
         Registration is on Luma and needs approval, because there are about 50 seats.
         What the workshop covers is on the <a href="/">home page</a>.
@@ -56,13 +76,13 @@
     <div class="wrap">
       <div class="split split--wide">
         <div data-anim="up">
-          <h2 id="reg-h" style="margin-bottom:22px;">How it works</h2>
+          <h2 id="reg-h">How it works</h2>
           <ol class="list list--numbered">
             <li><b>Request an invite on Luma</b><span>It takes about a minute.</span></li>
             <li><b>We approve</b><span>Up to about 50 people.</span></li>
             <li><b>You get a confirmation</b><span>With the venue address and details.</span></li>
           </ol>
-          <p class="note" style="margin-top:28px;">
+          <p class="note">
             Open to high school students in and around the Bay Area. You do not need
             experience, a topic, or a paper.
           </p>
@@ -70,10 +90,10 @@
 
         <div>
           <div class="signup-card sticky" data-anim="fade">
-            <a class="btn btn-primary" href="https://luma.com/g9xq2f52" target="_blank" rel="noopener">Sign up on Luma</a>
+            <a class="btn btn-primary" data-magnetic href="https://luma.com/g9xq2f52" target="_blank" rel="noopener">Sign up on Luma</a>
             <ul class="mini-facts">
               <li><span>Date</span><b>Sunday, Jan 3, 2027</b></li>
-              <li><span>Time</span><b>12:30 &ndash; 5:30 PM</b></li>
+              <li><span>Time</span><b>12:30 – 5:30 PM</b></li>
               <li><span>Where</span><b>Los Gatos High School</b></li>
               <li><span>Cost</span><b>Free</b></li>
               <li><span>Seats</span><b>About 50</b></li>
@@ -84,10 +104,10 @@
     </div>
   </section>
 
-  <section class="section section--mist" aria-labelledby="log-h">
+  <section class="section section--glass" aria-labelledby="log-h">
     <div class="wrap">
-      <h2 id="log-h" data-anim="up">On the day</h2>
-      <dl class="facts" style="margin-top:28px;">
+      <h2 id="log-h" data-anim="up" data-split>On the day</h2>
+      <dl class="facts">
         <div class="fact" data-anim="up">
           <dt>Doors</dt><dd>12:15 PM<small>First session at 12:30.</small></dd>
         </div>
@@ -106,7 +126,7 @@
 
   <section class="section" aria-labelledby="bring-h">
     <div class="wrap">
-      <h2 id="bring-h" data-anim="up">What to bring</h2>
+      <h2 id="bring-h" data-anim="up" data-split>What to bring</h2>
       <ul class="checklist" data-anim="up">
         <li><span><b>A laptop and charger.</b> Outlets are limited, so arrive charged.</span></li>
         <li><span><b>Anything you want to show.</b> Optional, and in any state.</span></li>
@@ -128,12 +148,10 @@
       <a href="https://discord.gg/qTBJKCNx2" target="_blank" rel="noopener">Exea Labs Discord</a>
       <a href="https://www.exealabs.org/" target="_blank" rel="noopener">exealabs.org</a>
     </nav>
-    <p class="footer-note">Exea Labs &middot; Future Leaders Initiative, a 501(c)(3) nonprofit</p>
+    <p class="footer-note">Exea Labs · Future Leaders Initiative, a 501(c)(3) nonprofit</p>
   </div>
 </footer>
 
-<script src="/assets/vendor/gsap.min.js" defer></script>
-<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
-<script src="/assets/app.js" defer></script>
+<script type="module" src="/src/js/main.js"></script>
 </body>
 </html>
